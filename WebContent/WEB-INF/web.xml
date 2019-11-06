@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+	<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0sd"
+    id="WebApp_ID" version="4.1">
+  <display-name>giantro</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    
+    <welcome-file>index.jsp</welcome-file>
+    
+  </welcome-file-list>
+  <init-param>
+	<param-name>mappedfile</param-name>
+	<param-value>false</param-value>
+  </init-param>
+	  
+  
+ 
+    
+   <!--  <servlet>
+        <servlet-name>Physio_Ctrl</servlet-name>
+        <servlet-class>Controllers.Physio_Ctrl</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>Physio_Ctrl</servlet-name>
+        <url-pattern>/Physio_Ctrl</url-pattern>
+    </servlet-mapping>  -->
+   <servlet>
+        <servlet-name>Appointment_Ctrl</servlet-name>
+        <servlet-class>Controllers.Appointment_Ctrl</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>Appointment_Ctrl</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping> 
+    
+</web-app>
+	
+
+</element>
+
