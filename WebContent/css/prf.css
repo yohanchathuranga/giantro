@@ -1,0 +1,18 @@
+.column1 {
+    float: left;
+    width: 30%;
+    
+    height: 300px;
+  }
+  .column {
+    float: right;
+    width: 70%;
+    height: 300px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

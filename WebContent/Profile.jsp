@@ -5,8 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>physio profile</title>
 
+<link rel="stylesheet" >
 <style type="text/css">
 .column1 {
   float: left;
