@@ -431,17 +431,9 @@
         <servlet-name>default</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>  -->
-<!--     
-   <servlet>
-        <servlet-name>Physio_Ctrl</servlet-name>
-        <servlet-class>Controllers.Physio_Ctrl</servlet-class>
-    </servlet>
- 
-    <servlet-mapping>
-        <servlet-name>Physio_Ctrl</servlet-name>
-        <url-pattern>/Physio_Ctrl</url-pattern>
-    </servlet-mapping>  -->
-   <servlet>
+
+    
+  <!--  <servlet>
         <servlet-name>Appointment_Ctrl</servlet-name>
         <servlet-class>Controllers.Appointment_Ctrl</servlet-class>
     </servlet>
@@ -449,7 +441,7 @@
     <servlet-mapping>
         <servlet-name>Appointment_Ctrl</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
 
     <!-- The mappings for the JSP servlet -->
     <servlet-mapping>
@@ -4743,8 +4735,8 @@
   <!-- to use within your application.                                       -->
 
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
+        <!-- <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file> -->
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 

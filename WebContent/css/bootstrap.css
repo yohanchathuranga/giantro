@@ -1,8 +1,10 @@
-@charset "ISO-8859-1";
-@import "style.css";
-@import "animate.css";
-@import "superfish.css";
-
+@charset "UTF-8";
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -198,6 +200,7 @@ fieldset {
 }
 
 legend {
+  color:#9d9d9d;
   border: 0;
   padding: 0;
 }
@@ -3959,6 +3962,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-block {
+  color:#000080;
   display: block;
   width: 100%;
 }
@@ -5178,7 +5182,7 @@ tbody.collapse.in {
   display: inline-block;
 }
 .breadcrumb > li + li:before {
-  content: "/ ";
+  content: "/Â ";
   padding: 0 5px;
   color: #ccc;
 }

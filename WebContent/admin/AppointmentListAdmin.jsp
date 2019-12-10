@@ -6,8 +6,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>appointment list</title>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">
+
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
+
 	<div align="center">
         <table border="1" cellpadding="5">
             <caption><h2>List of Appointments</h2></caption>
@@ -35,5 +45,6 @@
             </c:forEach>
         </table>
     </div>   
+     <%@include file="/footer.jsp" %>
 </body>
 </html>

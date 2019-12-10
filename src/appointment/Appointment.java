@@ -8,7 +8,7 @@ public class Appointment {
 
 
     private int Appointment_No;
-    private String Physio_NIC;
+    public String Physio_NIC;
     private String Customer_NIC;
     private String Date;
     private String Time;
@@ -26,6 +26,10 @@ public class Appointment {
     
     public Appointment(int Appointment_No) {
     	this.Appointment_No=Appointment_No;
+    }
+    
+    public Appointment(String Physio_NIC) {
+    	this.Physio_NIC=Physio_NIC;
     }
     
 	public Appointment(String Physio_NIC,String Customer_NIC,String date,String time,String Status) {

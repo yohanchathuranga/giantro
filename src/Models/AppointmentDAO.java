@@ -17,11 +17,7 @@ public class AppointmentDAO {
     private String jdbcPassword="";
     private Connection jdbcConnection;
      
-//    public AppointmentDAO(String jdbcURL, String jdbcUsername, String jdbcPassword) {
-//        this.jdbcURL = jdbcURL;
-//        this.jdbcUsername = jdbcUsername;
-//        this.jdbcPassword = jdbcPassword;
-//    }
+
      
     protected void connect() throws SQLException {
         if (jdbcConnection == null || jdbcConnection.isClosed()) {
@@ -57,17 +53,19 @@ public class AppointmentDAO {
         statement.close();
         disconnect();
         return rowInserted;
+        
     }
      
-    public List<Appointment> listAllAppointments() throws SQLException {
+    public List<Appointment> listAllAppointments(String  NIC) throws SQLException {
         List<Appointment> listAppointment = new ArrayList<>();
          
-        String sql = "SELECT * FROM appointment";
+        String sql = "SELECT * FROM appointment WHERE Physio_NIC=?" ;
          
         connect();
-         
-        Statement statement = jdbcConnection.createStatement();
-        ResultSet resultSet = statement.executeQuery(sql);
+        System.out.println(NIC);
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1,NIC);
+        ResultSet resultSet = statement.executeQuery();
          
         while (resultSet.next()) {
            int appointment_no = resultSet.getInt("Appointment_No");
@@ -77,8 +75,39 @@ public class AppointmentDAO {
             String time = resultSet.getString("Time");
             String status =resultSet.getString("Status");
              
-            Appointment appointment = new Appointment(appointment_no,physio_NIC,customer_NIC,date,time,status);
-            listAppointment.add(appointment);
+            Appointment appointmentr = new Appointment(appointment_no,physio_NIC,customer_NIC,date,time,status);
+            listAppointment.add(appointmentr);
+        }
+         
+        resultSet.close();
+        statement.close();
+         
+        disconnect();
+         
+        return listAppointment;
+    }
+    
+    public List<Appointment> listAllAppointmentsU(String  NIC) throws SQLException {
+        List<Appointment> listAppointment = new ArrayList<>();
+         
+        String sql = "SELECT * FROM appointment WHERE Customer_NIC=?" ;
+         
+        connect();
+        System.out.println(NIC);
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1,NIC);
+        ResultSet resultSet = statement.executeQuery();
+         
+        while (resultSet.next()) {
+           int appointment_no = resultSet.getInt("Appointment_No");
+            String physio_NIC = resultSet.getString("Physio_NIC");
+            String customer_NIC = resultSet.getString("Customer_NIC");
+            String date = resultSet.getString("Date");
+            String time = resultSet.getString("Time");
+            String status =resultSet.getString("Status");
+             
+            Appointment appointmentr = new Appointment(appointment_no,physio_NIC,customer_NIC,date,time,status);
+            listAppointment.add(appointmentr);
         }
          
         resultSet.close();

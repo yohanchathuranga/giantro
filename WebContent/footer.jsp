@@ -15,15 +15,25 @@
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
-<style type="text/css">
+
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
 	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">
+
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 	
-	<%@include file="css/bootstrap.min.css"%>  
-	<%-- <%@include file="css/style.css"%> --%>
-	<%-- <%@include file="css/animate.css"%>  --%>
-	<%-- <%@include file="css/icomoon.css"%> --%>
-	<%-- <%@include file="css/superfish.css"%>  --%>
-</style>
+	<!-- Modernizr JS -->
+	<script src="${pageContext.request.contextPath}/js/modernizr-2.6.2.min.js"></script>
+	
 </head>
 <body>
 
@@ -40,10 +50,10 @@
 						<div class="col-md-4 animate-box">
 							<h3 class="section-title">Our Address</h3>
 							<ul class="contact-info">
-								<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-								<li><i class="icon-phone"></i>+ 1235 2355 98</li>
-								<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
-								<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+								<li><i class="icon-map-marker"></i>198 Ward Place, Colombo 07, Srilanka</li>
+								<li><i class="icon-phone"></i>+ 941 14 2355 98</li>
+								<li><i class="icon-envelope"></i><a href="#">info@giantro.com</a></li>
+								<li><i class="icon-globe2"></i><a href="#">www.giantro.com</a></li>
 							</ul>
 						</div>
 						<div class="col-md-4 animate-box">
@@ -76,7 +86,7 @@
 								<a href="#"><i class="icon-dribbble2"></i></a>
 								<a href="#"><i class="icon-youtube"></i></a>
 							</p>
-							<p>Copyright 2016 Free Html5 <a href="#">Fitness</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+							<p>Copyright 2016  <a href="index.jsp">Giantro </a></p>
 						</div>
 					</div>
 				</div>
@@ -84,14 +94,24 @@
 		</footer>
 	
 
-
-
-
-<script src="js/jquery.min.js"></script>
-	
-	
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="${pageContext.request.contextPath}/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="${pageContext.request.contextPath}/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="${pageContext.request.contextPath}/js/hoverIntent.js"></script>
+	<script src="${pageContext.request.contextPath}/js/superfish.js"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="${pageContext.request.contextPath}/js/main.js"></script>
+
+
+	
 
 </body>
 </html>

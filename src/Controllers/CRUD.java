@@ -112,7 +112,8 @@ public class CRUD extends HttpServlet {
 	
 	private void listAppointment(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        List<Appointment> listAppointment = appointmentDAO.listAllAppointments();
+		String NIC=request.getParameter("NIC");
+        List<Appointment> listAppointment = appointmentDAO.listAllAppointments(NIC);
         request.setAttribute("listAppointment", listAppointment);
         RequestDispatcher dispatcher = request.getRequestDispatcher("AppointmentListUser.jsp");
         dispatcher.forward(request, response);

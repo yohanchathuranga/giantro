@@ -1,8 +1,10 @@
 package User;
 
+import java.security.MessageDigest;
+
 public class User {
 
-    private String NIC;
+    public String NIC;
     private String Name;
     private String Email;
     private String Certificate_ID;
@@ -11,13 +13,14 @@ public class User {
     private String Place_Name;
     private String Contact_No;
     private String Status;
-    private String PF;
-    private String CF;
-    private String GF;
-    private String SF;
-    private String AF;
+    public String PF;
+    public String CF;
+    public String GF;
+    public String SF;
+    public String AF;
+    public String Password;
 
-    public User(String NIC, String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status,String PF,String CF,String GF,String SF,String AF) {
+    public User(String NIC, String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status,String PF,String CF,String GF,String SF,String AF,String Password) {
         super();
         this.NIC=NIC;
         this.Name=Name;
@@ -33,6 +36,7 @@ public class User {
         this.GF=GF;
         this.SF=SF;
         this.AF=AF;
+        this.Password=Password;
     }
     
     public User(String NIC, String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status) {
@@ -46,10 +50,10 @@ public class User {
         this.Place_Name=Place_Name;
         this.Contact_No=Contact_No;
         this.Status=Status;
-      
     }
-    
-    public User(String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status,String PF,String CF,String GF,String SF,String AF) {
+    public User(String NIC, String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status,String Password) {
+        super();
+        this.NIC=NIC;
         this.Name=Name;
         this.Email=Email;
         this.Certificate_ID=Certificate_ID;
@@ -58,11 +62,8 @@ public class User {
         this.Place_Name=Place_Name;
         this.Contact_No=Contact_No;
         this.Status=Status;
-        this.PF=PF;
-        this.CF=CF;
-        this.GF=GF;
-        this.SF=SF;
-        this.AF=AF;
+        this.Password=Password;
+      
     }
     
     public User(String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status) {
@@ -74,6 +75,21 @@ public class User {
         this.Place_Name=Place_Name;
         this.Contact_No=Contact_No;
         this.Status=Status;
+      
+    }
+    
+    public User(String NIC,String Name,String Email,String Certificate_ID,String Address,String Exp,String Place_Name,String Contact_No,String Status,String PF,String Password) {
+    	this.NIC=NIC;
+    	this.Name=Name;
+        this.Email=Email;
+        this.Certificate_ID=Certificate_ID;
+        this.Address=Address;
+        this.Exp=Exp;
+        this.Place_Name=Place_Name;
+        this.Contact_No=Contact_No;
+        this.Status=Status;
+        this.PF=PF;
+        this.Password=Password;
       
     }
     
@@ -277,5 +293,33 @@ public class User {
     public void setAF(String AF) {
         this.AF = AF;
     }
+    
+    public String getPassword() {
+        return Password;
+    }
+
+    /**
+     * @param AF the AF to set
+     */
+//    public void setPassword(String Password) {
+//    	this.Password=Password;
+//    }
+    public void setPassword(String Password) {
+		try{
+	        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+	        byte[] hash = digest.digest(Password.getBytes("UTF-8"));
+	        StringBuffer hexString = new StringBuffer();
+
+	        for (int i = 0; i < hash.length; i++) {
+	            String hex = Integer.toHexString(0xff & hash[i]);
+	            if(hex.length() == 1) hexString.append('0');
+	            hexString.append(hex);
+	        }
+	        
+	        this.Password=hexString.toString();
+	    } catch(Exception ex){
+	       throw new RuntimeException(ex);
+	    }
+	}
 
 }

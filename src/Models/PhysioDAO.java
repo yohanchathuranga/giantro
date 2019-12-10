@@ -13,18 +13,14 @@ import User.User;
 
 public class PhysioDAO {
 
-	private String jdbcURL="jdbc:mysql://localhost:3306/giantrodb";
-    private String jdbcUsername="root";
-    private String jdbcPassword="";
-    private Connection jdbcConnection;
+	private static String jdbcURL="jdbc:mysql://localhost:3306/giantrodb";
+    private static String jdbcUsername="root";
+    private static String jdbcPassword="";
+    private static Connection jdbcConnection;
      
-//    public UserDAO(String jdbcURL, String jdbcUsername, String jdbcPassword) {
-//        this.jdbcURL = jdbcURL;
-//        this.jdbcUsername = jdbcUsername;
-//        this.jdbcPassword = jdbcPassword;
-//    }
+
      
-    protected void connect() throws SQLException {
+    protected static void connect() throws SQLException {
         if (jdbcConnection == null || jdbcConnection.isClosed()) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -42,7 +38,7 @@ public class PhysioDAO {
     }
      
     public boolean insertUser(User user) throws SQLException {
-        String sql = "INSERT INTO user (NIC, Name,Email,Certificate_ID,Address,Exp,Place_Name,Contact_No,Status) VALUES (?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO user (NIC, Name,Email,Certificate_ID,Address,Exp,Place_Name,Contact_No,Status,PF,Password) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         connect();
         System.out.println("Connection Successful");
          
@@ -57,7 +53,9 @@ public class PhysioDAO {
         statement.setString(7, user.getPlace_Name());
         statement.setString(8, user.getContact_No());
         statement.setString(9, user.getStatus());
-       ;
+        statement.setString(10,user.getPF());
+        statement.setString(11,user.getPassword());
+       
          
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();
@@ -114,8 +112,8 @@ public class PhysioDAO {
     }
      
     public boolean updateUser(User user) throws SQLException {
-        String sql = "UPDATE user SET Name = ?, Email = ?, Certificate_ID = ?, Address = ?, Exp=?, Place_Name = ?, Contact_No = ?, Status = ?";
-        sql += " WHERE User_No = ?";
+        String sql = "UPDATE user SET Name = ?, Email = ?, Certificate_ID = ?, Address = ?, Exp=?, Place_Name = ?, Contact_No = ?,Password= ?";
+        sql += " WHERE NIC = ?";
         connect();
          
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
@@ -126,7 +124,7 @@ public class PhysioDAO {
         statement.setString(5, user.getExp());
         statement.setString(6, user.getPlace_Name());
         statement.setString(7, user.getContact_No());
-        statement.setString(8, user.getStatus());
+        statement.setString(8, user.getPassword());
         statement.setString(9, user.getNIC());
          
         boolean rowUpdated = statement.executeUpdate() > 0;
@@ -156,8 +154,9 @@ public class PhysioDAO {
             String place_name = resultSet.getString("Place_Name");
             String contact_no = resultSet.getString("Contact_No");
             String status =resultSet.getString("Status");
+            String password =resultSet.getString("Password");
              
-            user = new User(NIC,name,email,certificate_ID,address,exp,place_name,contact_no,status);
+            user = new User(NIC,name,email,certificate_ID,address,exp,place_name,contact_no,status,password);
            
         }
          
@@ -166,5 +165,99 @@ public class PhysioDAO {
          
         return user;
     }
-
+    
+    public static boolean login_Physio(String Email,String Password) throws SQLException {
+        User user = null;
+        boolean status1=false;
+        String sql = "SELECT * FROM user WHERE Email = ? AND Password=?";
+         
+        connect();
+         
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, Email);
+        statement.setString(2, Password);
+         
+        ResultSet resultSet = statement.executeQuery();
+         
+        if (resultSet.next()) {
+        	status1=true;
+        	String NIC = resultSet.getString("NIC");
+            String name = resultSet.getString("Name");
+            String email = resultSet.getString("Email");
+            String certificate_ID = resultSet.getString("Certificate_ID");
+            String address = resultSet.getString("Address");
+            String exp = resultSet.getString("Exp");
+            String place_name = resultSet.getString("Place_Name");
+            String contact_no = resultSet.getString("Contact_No");
+            String status =resultSet.getString("Status");
+            String password=resultSet.getString("Password");
+             
+            user = new User(NIC,name,email,certificate_ID,address,exp,place_name,contact_no,status,password);
+           
+        }
+         
+        resultSet.close();
+        statement.close();
+         
+        return status1;
+    }
+    
+    public static boolean validate(String name,String pass){
+		boolean status=false;
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/giantrodb","root","");
+			
+			PreparedStatement ps=(PreparedStatement) con.prepareStatement("select * from user where Email=? and Password=?");
+			ps.setString(1,name);
+			ps.setString(2,pass);
+			
+			ResultSet rs=ps.executeQuery();
+			status=rs.next();
+			
+			
+		}catch(Exception e){System.out.println(e);}
+		return status;
+		}
+    public User getUserDetail(String Email,String Password) throws SQLException {
+        User user = null;
+        String sql = "SELECT * FROM user WHERE Email = ? AND Password=?";
+         
+        connect();
+         
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, Email);
+        statement.setString(2, Password);
+         
+        ResultSet resultSet = statement.executeQuery();
+         
+        if (resultSet.next()) {
+        	String NIC = resultSet.getString("NIC");
+            String name = resultSet.getString("Name");
+            String email = resultSet.getString("Email");
+            String certificate_ID = resultSet.getString("Certificate_ID");
+            String address = resultSet.getString("Address");
+            String exp = resultSet.getString("Exp");
+            String place_name = resultSet.getString("Place_Name");
+            String contact_no = resultSet.getString("Contact_No");
+            String status =resultSet.getString("Status");
+            String pf = resultSet.getString("PF");
+            String cf = resultSet.getString("CF");
+            String gf = resultSet.getString("GF");
+            String sf = resultSet.getString("SF");
+            String af = resultSet.getString("AF");
+            String password = resultSet.getString("Password");
+             
+            user = new User(NIC,name,email,certificate_ID,address,exp,place_name,contact_no,status,pf,cf,gf,sf,af,password);
+           
+        }
+         
+        resultSet.close();
+        statement.close();
+         
+        return user;
+    }
+    
 }
+
+

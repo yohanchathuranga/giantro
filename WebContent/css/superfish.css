@@ -1,18 +1,4 @@
 /*** ESSENTIAL STYLES ***/
-.nav{
-	width: 100%;
-	float: left;
-	margin: 0 0 1em 0;
-	padding: 0;
-	background-color: #f2f2f2;
-	border-bottom: 1px solid #ccc;  
-}
-.fh5co-sub-ddown{
-	list-style: none;
-	width: 160px;
-	margin: 0 auto;
-	padding: 0;
-}
 .sf-menu, .sf-menu * {
 	margin: 0;
 	padding: 0;
