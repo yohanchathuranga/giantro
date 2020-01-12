@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>giantro</name>
+	<name>Giantrof</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,14 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<variableList>
-		<variable>
-			<name>boostrap</name>
-			<value>file:/E:/eclipse%20project/giantro/WebContent/css/bootstrap.css</value>
-		</variable>
-		<variable>
-			<name>css</name>
-			<value>file:/E:/eclipse%20project/giantro/WebContent/css</value>
-		</variable>
-	</variableList>
 </projectDescription>

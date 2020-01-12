@@ -1,97 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
-  <display-name>giantro</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Giantrof</display-name>
   <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
- 
- 
-    
-    <!--  <servlet>
-        <servlet-name>Physio_Ctrl</servlet-name>
-        <servlet-class>Controllers.Physio_Ctrl</servlet-class>
-    </servlet>
- 
-    <servlet-mapping>
-        <servlet-name>Physio_Ctrl</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>  --> 
-   <servlet>
-        <servlet-name>Appointment_Ctrl</servlet-name>
-        <servlet-class>Controllers.Appointment_Ctrl</servlet-class>
-    </servlet>
- 
-    <servlet-mapping>
-        <servlet-name>Appointment_Ctrl</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.css</url-pattern>
-    </servlet-mapping> 
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.js</url-pattern>
-    </servlet-mapping> 
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.jpg</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.png</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.mp4</url-pattern>
-    </servlet-mapping>
-    
-    <context-param>
-	    <param-name>host</param-name>
-	    <param-value>your_stmp_server</param-value>
-	</context-param>
-	 
-	<context-param>
-	    <param-name>port</param-name>
-	    <param-value>25</param-value>
-	</context-param>
-	 
-	<context-param>
-	    <param-name>email</param-name>
-	    <param-value>your sender email</param-value>
-	</context-param>
-	 
-	<context-param>
-	    <param-name>name</param-name>
-	    <param-value>your sender name</param-value>
-	</context-param>
-	  
-	<context-param>
-	    <param-name>pass</param-name>
-	    <param-value>your sender email password</param-value>
-	</context-param>
-	
-	<!-- <multipart-config>
-	    <location>/tmp</location>
-	    <max-request-size>418018841</max-request-size>
-	    <max-file-size>20848820</max-file-size>
-	    <file-size-threshold>1048576</file-size-threshold>
-	</multipart-config> -->
-   
-    <!-- <servlet>
-    	<servlet-name>DirectoryListing</servlet-name>
-    	<servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
-    	<init-param>
-        	<param-name>listings</param-name>
-        	<param-value>False</param-value>
-    	</init-param>
-    	<load-on-startup>1</load-on-startup>
-	</servlet>
-
-    <servlet-mapping>
-    	<servlet-name>DirectoryListing</servlet-name>
-    	<url-pattern>/</url-pattern>
-	</servlet-mapping> -->
 </web-app>

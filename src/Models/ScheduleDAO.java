@@ -10,7 +10,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import Schedule.Schedule;
+import Beans.Schedule;
+
 
 public class ScheduleDAO {
 	private static String jdbcURL="jdbc:mysql://localhost:3306/giantrodb";
@@ -149,8 +150,8 @@ public class ScheduleDAO {
         statement.setString(3, Schedule.getAge());
         statement.setString(4, Schedule.getHeight());
         statement.setString(5, Schedule.getWeight());
-        statement.setString(5, Schedule.getPhotos());
-        statement.setInt(6, Schedule.getSchedule_No());
+        statement.setString(6, Schedule.getPhotos());
+        statement.setInt(7, Schedule.getSchedule_No());
          
         boolean rowUpdated = statement.executeUpdate() > 0;
         statement.close();

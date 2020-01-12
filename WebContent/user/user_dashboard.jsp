@@ -23,24 +23,25 @@
 <body>
 	
 	<div class="sidebar">
-	<h3>You are Logged as Customer</h3>
+		<br><center><h5>You are Logged as User</h5></center>
 		<div class="image" align="center">
-			<img alt="Profile Picture" src="${pageContext.request.contextPath}/images/fr-10.jpg" class="img-circle" width="100px"/>	  			
+			<img alt="Profile Picture"
+				src="${pageContext.request.contextPath}/images/fr-10.jpg"
+				class="img-circle" width="100px" />
 		</div>
-	  <a class="active" href="Home.jsp">Home</a>
-	  <a href="profile_p?NIC=${user.NIC}">Profile</a>
-	  <a href="list_a_u?NIC=${user.NIC}">Appointments</a>
-	  <a href="list_s_u?NIC=${user.NIC}">Schedule Request</a>
-	  <a href="#about">About</a>
-	  <a href="logout" class="fh5co-sub-ddown">Sign Out</a>
+		<a class="active" href="Home.jsp">Home</a> <a
+			href="Profile?NIC=${user.NIC}">Profile</a> <a
+			href="Physio_appointments?NIC=${user.NIC}">Appointments</a> <a
+			href="Physio_schedule?NIC=${user.NIC}">Schedule Request</a> <a
+			href="#about">About</a> <a href="Logout" class="fh5co-sub-ddown">Sign
+			Out</a>
 	</div>
-	
+
 	<div class="content">
-	  <%@include file="/header.jsp" %>
-	  <%@include file="/video_bar.jsp" %>
-	  <%@include file="/footer.jsp" %>
+		<%@include file="/header.jsp"%>
+		<%@include file="/video_bar.jsp"%>
+		<%@include file="/footer.jsp"%>
 	</div>
-	
 	
 
 </body>

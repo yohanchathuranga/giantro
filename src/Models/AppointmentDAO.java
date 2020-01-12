@@ -9,7 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import appointment.Appointment;
+import Beans.Appointment;
+
+
 
 public class AppointmentDAO {
 	private String jdbcURL="jdbc:mysql://localhost:3306/giantrodb";

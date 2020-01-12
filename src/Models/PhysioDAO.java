@@ -1,5 +1,6 @@
 package Models;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,7 +10,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import User.User;
+import Beans.User;
+
+
 
 public class PhysioDAO {
 
@@ -112,7 +115,7 @@ public class PhysioDAO {
     }
      
     public boolean updateUser(User user) throws SQLException {
-        String sql = "UPDATE user SET Name = ?, Email = ?, Certificate_ID = ?, Address = ?, Exp=?, Place_Name = ?, Contact_No = ?,Password= ?";
+        String sql = "UPDATE user SET Name = ?, Email = ?, Certificate_ID = ?, Address = ?, Exp=?, Place_Name = ?, Contact_No = ?";
         sql += " WHERE NIC = ?";
         connect();
          
@@ -124,8 +127,8 @@ public class PhysioDAO {
         statement.setString(5, user.getExp());
         statement.setString(6, user.getPlace_Name());
         statement.setString(7, user.getContact_No());
-        statement.setString(8, user.getPassword());
-        statement.setString(9, user.getNIC());
+//        statement.setString(8, user.getPassword());
+        statement.setString(8, user.getNIC());
          
         boolean rowUpdated = statement.executeUpdate() > 0;
         statement.close();
@@ -154,9 +157,14 @@ public class PhysioDAO {
             String place_name = resultSet.getString("Place_Name");
             String contact_no = resultSet.getString("Contact_No");
             String status =resultSet.getString("Status");
+            String pf = resultSet.getString("PF");
+            String cf = resultSet.getString("CF");
+            String gf = resultSet.getString("GF");
+            String sf = resultSet.getString("SF");
+            String af = resultSet.getString("AF");
             String password =resultSet.getString("Password");
              
-            user = new User(NIC,name,email,certificate_ID,address,exp,place_name,contact_no,status,password);
+            user = new User(NIC,name,email,certificate_ID,address,exp,place_name,contact_no,status,pf,cf,gf,af,sf,password);
            
         }
          
@@ -202,14 +210,14 @@ public class PhysioDAO {
         return status1;
     }
     
-    public static boolean validate(String name,String pass){
+    public static boolean validate(String email,String pass){
 		boolean status=false;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/giantrodb","root","");
 			
 			PreparedStatement ps=(PreparedStatement) con.prepareStatement("select * from user where Email=? and Password=?");
-			ps.setString(1,name);
+			ps.setString(1,email);
 			ps.setString(2,pass);
 			
 			ResultSet rs=ps.executeQuery();
@@ -256,6 +264,31 @@ public class PhysioDAO {
         statement.close();
          
         return user;
+    }
+    
+    public String[] notification(String NIC) throws SQLException {
+    	String not[] =new String[2];
+    	String sql = "SELECT COUNT(Physio_NIC) AS Schedule FROM Schedule\r\n" + 
+    			"WHERE Physio_NIC=? UNION SELECT COUNT(Physio_NIC) AS Appointments FROM Schedule \r\n" + 
+    			"WHERE Physio_NIC=? ";
+    	connect();
+        
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, NIC);
+        statement.setString(2, NIC);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+        	String schedule = resultSet.getString("Schedule");
+            String appointment = resultSet.getString("Appointments");
+           
+           not[0]=schedule;
+           not[1]=appointment;
+        }
+         
+        resultSet.close();
+        statement.close();
+		return not;
+    	
     }
     
 }

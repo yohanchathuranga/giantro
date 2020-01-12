@@ -24,25 +24,25 @@
 	<body>
 	
 	<div class="sidebar">
-		<h4>You are Logged as Physiotherapist</h4>
+		<br><center><h5>You are Logged as Physiotherapist</h5></center>
 			<div class="image" align="center">
 				<img alt="Profile Picture" src="${pageContext.request.contextPath}/images/fr-10.jpg" class="img-circle" width="100px"/>	  			
 			</div>
 		  <a class="active" href="Home.jsp">Home</a>
-		  <a href="profile_p?NIC=${user.NIC}">Profile</a>
-		  <a href="list_a?NIC=${user.NIC}">Appointments</a>
-		  <a href="list_s?NIC=${user.NIC}">Schedule Request</a>
+		  <a href="Profile?NIC=${user.NIC}">Profile</a>
+		  <a href="Physio_appointments?NIC=${user.NIC}">Appointments</a>
+		  <a href="Physio_schedule?NIC=${user.NIC}">Schedule Request</a>
 		  <a href="#about">About</a>
-		  <a href="logout" class="fh5co-sub-ddown">Sign Out</a>
-	</div>
+		  <a href="Logout" class="fh5co-sub-ddown">Sign Out</a>
+		</div>
 	
 	<div class="content">
 		<%@include file="/header.jsp" %>
 	<% String message=(String)request.getAttribute("alertMsg");%>
-	<script type="text/javascript">
+	<%-- <script type="text/javascript">
 		var msg="<%=message%>";
 		alert(msg);
-	</script>
+	</script> --%>
 	<div class="fh5co-parallax-any">
 		<div class="container">
 			<div align="center">
@@ -67,9 +67,9 @@
 		                    <td><c:out value="${appointment.status}" /></td>
 		                    
 		                    <td>
-		                        <a href="edit_a?appointment_no=<c:out value='${appointment.appointment_No}' />">Edit</a>
+		                        <a href="Appointment_edit_physio?appointment_no=<c:out value='${appointment.appointment_No}' />">Edit</a>
 		                        &nbsp;&nbsp;&nbsp;&nbsp;
-		                        <a href="delete_a?appointment_no=<c:out value='${appointment.appointment_No}' />">Delete</a>
+		                        <a href="Appointment_delete?appointment_no=<c:out value='${appointment.appointment_No}' />">Delete</a>
 		                        &nbsp;&nbsp;&nbsp;&nbsp;
 		                                   
 		                    </td>

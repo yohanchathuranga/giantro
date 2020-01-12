@@ -57,14 +57,16 @@ input[type="submit"] {
 figure {
   margin-bottom: 2em;
 }
+
 .fh5co-parallax-any{
 	background:#3f413d;
+	backgroung-image:url("images/home.jpg");
   	position: relative;
   	color:#e2e7e6;
   	width:100%;
-  	margin:auto;
- 
+  	margin:auto; 
 }
+
 .fh5co-parallax-any input[type="text"],.fh5co-parallax-any input[type="date"],.fh5co-parallax-any input[type="time"],.fh5co-parallax-any input[type="email"]{
   color:#0000ff;
   border-radius:3px;
@@ -96,6 +98,7 @@ figure {
   position: relative;
   margin-bottom: 0;
   z-index: 9999999;
+  color: #4CB648 !important;
 }
 
 .fh5co-cover,
@@ -326,6 +329,7 @@ figure {
   left: 0;
   width: 100%;
   z-index: 2;
+  color: #4CB648 !important;
 }
 
 .nav-header {
@@ -333,6 +337,7 @@ figure {
   position: relative;
   float: left;
   width: 100%;
+  color: #4CB648;
 }
 
 #fh5co-logo {
@@ -380,6 +385,7 @@ figure {
   z-index: 2;
   display: block;
   float: right;
+  color: #4CB648 !important;
 }
 
 #fh5co-primary-menu > li > ul li.active > a {
@@ -407,6 +413,7 @@ figure {
 }
 #fh5co-primary-menu > li > ul li {
   position: relative;
+  color: #400080;
 }
 #fh5co-primary-menu > li > ul li > .sf-with-ul:after {
   border: none !important;

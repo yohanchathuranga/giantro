@@ -45,7 +45,7 @@
 			
 			<%=request.getAttribute("msg") != null ? request.getAttribute("msg") : ""%>
 		
-			<form  action="Alogin_u" method="post">
+			<form  action="Login" method="post">
 			  
 			    <label >Email</label>
 			    <input type="email" name="Email" id="email" placeholder="email" autocomplete="off" value="<%=email%>" />
@@ -56,7 +56,7 @@
 			    <div class="small_font">
 			    	Remember Me<input name="RememberMe" type="checkbox" value="1"
                         <%= "1".equals(rememberVal.trim()) ? "checked=\"checked\"" : "" %> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="new_u" >Register</a>
+					<a href="physio/register_physio.jsp" >Register</a>
 			    </div><br>
 				
 			  
