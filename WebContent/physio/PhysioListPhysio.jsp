@@ -11,7 +11,7 @@
 		<div class="sidebar">
 		<br><center><h5>You are Logged as Physiotherapist</h5></center>
 			<div class="image" align="center">
-				<img alt="Profile Picture" src="${pageContext.request.contextPath}/images/fr-10.jpg" class="img-circle" width="100px"/>	  			
+				<img alt="Profile Picture" src="${pageContext.request.contextPath}/Resources/physio/images/fr-10.jpg" class="img-circle" width="100px"/>	  			
 			</div>
 		  <a class="active" href="Home.jsp">Home</a>
 		  <a href="Profile?NIC=${user.NIC}">Profile</a>

@@ -3,20 +3,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/prof.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/prof.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/animate.css">
 		<!-- Icomoon Icon Fonts-->
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/icomoon.css">
 		<!-- Bootstrap  -->
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/bootstrap.css">
 		<!-- Superfish -->
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/superfish.css">
 	
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/style.css">
 		
 	
 		<!-- Modernizr JS -->
-		<script src="${pageContext.request.contextPath}/js/modernizr-2.6.2.min.js"></script>
+		<script src="${pageContext.request.contextPath}/Resources/physio/js/modernizr-2.6.2.min.js"></script>
 	<meta charset="ISO-8859-1">
 	<title>Insert title here</title>
 	</head>
@@ -24,7 +24,7 @@
 		<div class="sidebar">
 		<br><center><h5>You are Logged as Physiotherapist</h5></center>
 			<div class="image" align="center">
-				<img alt="Profile Picture" src="${pageContext.request.contextPath}/images/fr-10.jpg" class="img-circle" width="100px"/>	  			
+				<img alt="Profile Picture" src="${pageContext.request.contextPath}/Resources/physio/images/fr-10.jpg" class="img-circle" width="100px"/>	  			
 			</div>
 		  <a class="active" href="Home.jsp">Home</a>
 		  <a href="Profile?NIC=${user.NIC}">Profile</a>
@@ -34,23 +34,23 @@
 		  <a href="Logout" class="fh5co-sub-ddown">Sign Out</a>
 		</div>
 		
-		<div class="content" style="background-image: url(images/home.jpg);">
+		<div class="content" ">
 		<%@include file="/header.jsp"%>
 		
 			<fieldset style="align-self:center">
 			  <legend>Your Profile</legend>
-			  		<form action="">
-			  			NIC :${user.NIC}<br>
-			  			Name :${user.name}<br>
-			  			Email :${user.email}<br>
-			  			Certificate ID :${user.certificate_ID}<br>
-			  			Contact No :${user.contact_No}<br>
-			  			Address : ${user.address}<br>
-			  			Place Name :${user.place_Name}<br>
-			  			Experience : ${user.exp}<br>
+			  		<table width="20%" align="center">
+			  			<tr><td>NIC :<td>${user.NIC}</tr>
+			  			<tr><td>Name :<td>${user.name}</tr>
+			  			<tr><td>Email :<td>${user.email}</tr>
+			  			<tr><td>Certificate ID :<td>${user.certificate_ID}</tr>
+			  			<tr><td>Contact No :<td>${user.contact_No}</tr>
+			  			<tr><td>Address : <td>${user.address}</tr>
+			  			<tr><td>Place Name :<td>${user.place_Name}</tr>
+			  			<tr><td>Experience : <td>${user.exp}</tr>
 			  				
-			  			<a href="Edit_profile?NIC=${user.NIC}">Edit Your Profile</a> 	
-			  		</form>
+			  			<tr><td><a href="Edit_profile?NIC=${user.NIC}">Edit Your Profile</a> </tr>
+			  		</table>
 			</fieldset>
 		
 			<%@include file="/footer.jsp"%>

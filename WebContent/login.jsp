@@ -7,16 +7,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/prof.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/prof.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/animate.css">
 	<!-- Icomoon Icon Fonts -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/bootstrap.css">
 	<!-- Superfish -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/superfish.css">
 
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/style.css">
 </head>
 <body>
 	<%
@@ -38,22 +38,23 @@
 	%>
 
 
-	<div class="container2" style="background-image: url(images/home-image.jpg);">
+	<div class="container2" style="background-image: url(Resources/physio/images/home-image.jpg);">
 	<div class="form_login">
 		<fieldset>
 			<legend>User Login</legend>
 			
 			<%=request.getAttribute("msg") != null ? request.getAttribute("msg") : ""%>
 		
-			<form  action="Login" method="post">
+			<form  action="Physio_Login" method="post">
 			  
-			    <label >Email</label>
-			    <input type="email" name="Email" id="email" placeholder="email" autocomplete="off" value="<%=email%>" />
+			    <label >Email Or Username</label>
+			    <input type="text" name="Email" id="email" placeholder="email or username" autocomplete="off" value="<%=email%>" />
 			 
 			  
 			    <label >Password</label>
 			    <input type="password" name="Password" id="password" placeholder="Password"  autocomplete="off" value="<%=password%>" /><br><br>
-			    <div class="small_font">
+			    
+				<div class="small_font">
 			    	Remember Me<input name="RememberMe" type="checkbox" value="1"
                         <%= "1".equals(rememberVal.trim()) ? "checked=\"checked\"" : "" %> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="physio/register_physio.jsp" >Register</a>

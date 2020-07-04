@@ -16,23 +16,23 @@
 	<meta name="twitter:card" content="" />
 
 
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/Resources/physio/favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/icomoon.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/bootstrap.css">
 	<!-- Superfish -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/superfish.css">
 
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/physio/css/style.css">
 	
 	<!-- Modernizr JS -->
-	<script src="${pageContext.request.contextPath}/js/modernizr-2.6.2.min.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/modernizr-2.6.2.min.js"></script>
 	
 </head>
 <body>
@@ -57,7 +57,7 @@
 							</ul>
 						</div>
 						<div class="col-md-4 animate-box">
-							<h3 class="section-title">Drop us a line</h3>
+							<h3 class="section-title">QA form</h3>
 							<form class="contact-form">
 								<div class="form-group">
 									<label for="name" class="sr-only">Name</label>
@@ -68,7 +68,7 @@
 									<input type="email" class="form-control" id="email" placeholder="Email">
 								</div>
 								<div class="form-group">
-									<label for="message" class="sr-only">Message</label>
+									<label for="message" class="sr-only">Question</label>
 									<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
 								</div>
 								<div class="form-group">
@@ -94,21 +94,21 @@
 		</footer>
 	
 
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="${pageContext.request.contextPath}/js/jquery.waypoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar -->
-	<script src="${pageContext.request.contextPath}/js/jquery.stellar.min.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/jquery.stellar.min.js"></script>
 	<!-- Superfish -->
-	<script src="${pageContext.request.contextPath}/js/hoverIntent.js"></script>
-	<script src="${pageContext.request.contextPath}/js/superfish.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/hoverIntent.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/superfish.js"></script>
 
 	<!-- Main JS (Do not remove) -->
-	<script src="${pageContext.request.contextPath}/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/Resources/physio/js/main.js"></script>
 
 
 	
